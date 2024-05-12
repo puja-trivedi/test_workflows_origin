@@ -4,8 +4,7 @@ on:
   push:
     paths: 'kbmodel.txt'
   workflow_run:
-    workflows:
-      - 'add_line_to_file.yaml'
+    workflows: [add-line-to-file]
     types:
       - completed
 jobs:
