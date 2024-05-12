@@ -2,7 +2,7 @@ name: push pydantic kbmodel to bkbit
 
 on:
   push:
-
+    paths: 'kbmodel.txt'
 jobs:
   update_kbmodel:
     runs-on: ubuntu-latest

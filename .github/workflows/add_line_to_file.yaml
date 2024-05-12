@@ -21,7 +21,7 @@ jobs:
           git config --global user.email "xspuja@gmail.com"
           git add kbmodel.txt
           git commit -m "Add line to kbmodel.txt"
-          git push https://github.com/${{ github.repository }}.git HEAD:main
+          # git push https://github.com/${{ github.repository }}.git HEAD:main
           # You can also use the GH_TOKEN secret like this:
-          # git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
 
