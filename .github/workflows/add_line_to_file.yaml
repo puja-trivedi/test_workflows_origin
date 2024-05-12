@@ -1,0 +1,26 @@
+name: add-line-to-file
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  add_line_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add the line to the file
+      - name: Add line to kbmodel.txt
+        run: echo "Added in workflow" >> kbmodel.txt
+
+      # Commit and push the changes back to the repository
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Puja Trivedi"
+          git config --global user.email "xspuja@gmail.com"
+          git add kbmodel.txt
+          git commit -m "Add line to kbmodel.txt"
+          git push
