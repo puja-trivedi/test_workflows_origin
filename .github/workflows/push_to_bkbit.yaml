@@ -3,6 +3,11 @@ name: push pydantic kbmodel to bkbit
 on:
   push:
     paths: 'kbmodel.txt'
+  workflow_run:
+    workflows:
+      - 'add_line_to_file.yaml'
+    types:
+      - completed
 jobs:
   update_kbmodel:
     runs-on: ubuntu-latest
