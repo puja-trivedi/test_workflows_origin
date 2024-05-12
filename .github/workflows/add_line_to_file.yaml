@@ -24,8 +24,9 @@ jobs:
       #     git add kbmodel.txt
       #     git commit -m "Add line to kbmodel.txt"
       #     git push origin HEAD:main
-
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
