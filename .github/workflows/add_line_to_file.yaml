@@ -16,12 +16,12 @@ jobs:
       - name: Add line to kbmodel.txt
         run: echo "Added in workflow" >> kbmodel.txt
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name "Puja Trivedi"
           git config --global user.email "xspuja@gmail.com"
           git add kbmodel.txt
           git commit -m "Add line to kbmodel.txt"
-          # git push https://github.com/${{ github.repository }}.git HEAD:main
-          # You can also use the GH_TOKEN secret like this:
-          git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push origin HEAD:main
 
