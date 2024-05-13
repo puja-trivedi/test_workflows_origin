@@ -15,21 +15,14 @@ jobs:
       # Add the line to the file
       - name: Add line to kbmodel.txt
         run: echo "Added in workflow" >> kbmodel.txt
-      # - name: Commit and push changes
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      #   run: |
-      #     git config --global user.name "Puja Trivedi"
-      #     git config --global user.email "xspuja@gmail.com"
-      #     git add kbmodel.txt
-      #     git commit -m "Add line to kbmodel.txt"
-      #     git push origin HEAD:main
+      - name: Add line to gars.txt
+        run: echo "Added in workflow" >> gars.txt
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add kbmodel.txt
-          git commit -m "Add line to kbmodel.txt"
+          git add kbmodel.txt gars.txt
+          git commit -m "Added lines to kbmodel.txt and gars.txt"
           git push
