@@ -1,4 +1,4 @@
-name: push pydantic kbmodel to bkbit
+name: push pydantic gars to bkbit
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     types:
       - completed
 jobs:
-  update_kbmodel:
+  update_gars:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
